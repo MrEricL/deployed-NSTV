@@ -23,6 +23,24 @@ def serve():
 
 
 '''
+Compresses the given array
+'''
+def compress(returnarray, scale):
+    temparray = []
+    for i in range(0, len(returnarray)-scale, scale):
+        min = 0
+        max = 0
+        for j in range(scale):
+            if returnarray[i+j] > max:
+                max = returnarray[i+j]
+            elif returnarray[i+j] < min:
+                min = returnarray[i+j]
+        temparray.append(max)
+        temparray.append(min)
+    return temparray
+
+
+'''
 Anonymous fxn inside process to facilitate creation of audio blobs
 INPUT: array (floats), frequency (int)
 OUTPUT: base64 representation
@@ -167,11 +185,11 @@ def process_defaults(filepath):
 
 @app.route("/defaults", methods=['POST', 'GET'])
 def defaults():
-    path = "./utils/{}"
-    return {"cantina": process_defaults(path.format("cantina.wav")), 
-    "sine": process_defaults(path.format("sine.wav")), 
-    "star_wars" : process_defaults(path.format("./StarWars3.wav")), 
-    "taunt": process_defaults(path.format("taunt.wav"))}
+    path = "./utils/"
+    return {"cantina": process_defaults(path + "cantina.wav"), 
+            "sine": process_defaults(path + "sine.wav"), 
+            "star_wars" : process_defaults(path + "StarWars3.wav"), 
+            "taunt": process_defaults(path + "taunt.wav")}
 
 
 @app.route("/about")

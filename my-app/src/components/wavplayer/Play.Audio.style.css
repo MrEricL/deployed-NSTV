@@ -1,0 +1,26 @@
+
+.Audio {
+  position: relative;
+
+  border-style:solid;
+  padding:5px;
+  margin-left:20px;
+  margin-right:20px;
+  margin-bottom:20px;
+}
+
+.audio_player{
+	display:inline-block;
+	
+	width:40%;
+	float:left;
+}
+
+audio{
+	display:inline-block;
+	float:left;
+}
+
+.download_button{
+	display:inline-block;
+}

@@ -1,0 +1,16 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: rgb(31, 29, 29);
+}
+
+.font {
+  font-family: "Montserrat";
+}
